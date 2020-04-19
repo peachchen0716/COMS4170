@@ -1,17 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="container">
+    <Header :curView="curView" v-on:page-selected="onPageSelected"/>
+    
+    <component v-bind:is="curPageComputed"></component>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "./components/Header.vue";
+import HomePage from "./components/HomePage.vue";
+import LearnPage from "./components/LearnPage.vue"
+import QuizPage from "./components/QuizPage.vue";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    HomePage,
+    LearnPage,
+    QuizPage
+  },
+  data: function () {
+    return {
+      curView: 'HomePage',
+    }
+  },
+  computed: {
+    curPageComputed: function () {
+      return this.curView
+    },
+  },
+  methods: {
+    onPageSelected: function (pageSelected) {
+      this.curView = pageSelected
+    }
   }
 }
 </script>
@@ -23,6 +46,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
