@@ -1,5 +1,27 @@
 <template>
   <div class="container">
+
+    <div class="row mt-3">
+      <div class="col-2"></div>
+      <div class="col-2 py-2 button">
+        <router-link to="/learn" 
+        class="nav-link" exact-active-class="active">Turkey</router-link>
+      </div>
+      <div class="col-2 py-2 button">
+        <router-link to="/learn/india" 
+        class="nav-link" exact-active-class="active">India</router-link>
+      </div>
+      <div class="col-2 py-2 button">
+        <router-link to="/learn/sea"  
+        class="nav-link" exact-active-class="active">Southeast Asia</router-link>
+      </div>
+      <div class="col-2 py-2 button">
+        <router-link to="/learn/east-asia"   
+        class="nav-link" exact-active-class="active">East Asia</router-link>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
     <div class="row mt-3">
       <div class="col-1"></div>
       <div class="col-10">
@@ -8,11 +30,11 @@
       <div class="col-1"></div>
     </div>
 
-    <LearnNavbar :curSect="'turkey'" v-on:area-selected="onAreaSelected"/>
+    <!-- <LearnNavbar :curSect="'turkey'" v-on:area-selected="onAreaSelected"/> -->
     
     <div class="row">
       <div class="card-group mt-3">
-        <div v-for="place in placeDict[curArea]" :key="place.id" id="card">
+        <div v-for="place in placeDict[group]" :key="place.id" id="card">
           <PlaceCard
           :placeName="place.placeName"
           :placeLoc="place.placeLoc"
@@ -21,28 +43,25 @@
           />
         </div>
       </div> 
-      <PlacePage v-if="selectedPlaceComputed != null" :placeName="selectedPlaceComputed"/>
     </div>
   </div>
 </template>
 
 <script>
-import LearnNavbar from "./LearnNavbar.vue";
+// import LearnNavbar from "./LearnNavbar.vue";
 import PlaceCard from "./PlaceCard.vue";
-import PlacePage from "./PlacePage.vue";
 import ProgressBar from "./ProgressBar.vue";
 
 export default {
   name: "LearnPage",
   components: {
-    LearnNavbar,
+    // LearnNavbar,
     PlaceCard,
-    PlacePage,
     ProgressBar,
   },
   data: function () {
     return {
-      curArea: "turkey",
+      // curArea: "turkey",
       placeDict: {
         "turkey": [
           {
@@ -50,13 +69,6 @@ export default {
             placeName: "Hagia Sophia",
             placeLoc: "Istanbul, Turkey",
             placeUrl: "1079px-Hagia_Sophia_Mars_2013.jpg",
-            features: [
-              {
-                featureName: "",
-                featureContent: "",
-                featureUrl: "",
-              }
-            ]
           },
           {
             id: 2,
@@ -109,10 +121,16 @@ export default {
         ]
       },
       progress: 0,
-      selectedPlace: null,
+      // selectedPlace: null,
     }
   },
   computed: {
+    group() {
+      // console.log(this.$route.params)
+      if (!("group" in this.$route.params))
+        return "turkey"
+      return this.$route.params.group
+    },
     progressComputed: {
       get: function() {
         return this.progress
@@ -121,21 +139,22 @@ export default {
         this.progress = newValue
       }
     },
-    selectedPlaceComputed: {
-      get: function() {
-        return this.selectedPlace
-      },
-      set: function(newValue) {
-        this.selectedPlace = newValue
-      }
-    }
+    // selectedPlaceComputed: {
+    //   get: function() {
+    //     return this.selectedPlace
+    //   },
+    //   set: function(newValue) {
+    //     this.selectedPlace = newValue
+    //   }
+    // }
   },
   methods: {
-    onAreaSelected: function (areaSelected) {
-      this.curArea = areaSelected
-    },
+    // onAreaSelected: function (areaSelected) {
+    //   this.curArea = areaSelected
+    // },
     onClickCard: function (id) {
-      this.selectedPlaceComputed = id
+      // this.selectedPlaceComputed = id
+      this.$router.push({ path: `/learn/place/${id}` })
     }
   }
 }
@@ -145,5 +164,10 @@ export default {
   #card {
     max-width: 33%;
     cursor: pointer;
+  }
+  .active {
+    background-color: #66a5ad;
+    color: white;
+    font-weight: 400;
   }
 </style>

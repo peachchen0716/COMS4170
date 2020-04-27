@@ -8,7 +8,7 @@
             <router-link to="/" class="nav-link" exact-active-class="active">Home</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/learn" class="nav-link" exact-active-class="active">Learn</router-link>
+            <router-link to="/learn" class="nav-link" active-class="active">Learn</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/quiz" class="nav-link" exact-active-class="active">Quiz</router-link>
@@ -30,12 +30,12 @@
 
 export default {
   name: 'App',
-  components: {
+  // components: {
     // Header,
     // HomePage,
     // LearnPage,
     // QuizPage
-  },
+  // },
   // data: function () {
   //   return {
   //     curView: 'HomePage',
