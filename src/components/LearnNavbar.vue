@@ -1,22 +1,22 @@
 <template>
   <div class="row mt-3">
     <div class="col-2"></div>
-    <div class="col-2 py-2" 
+    <div class="col-2 py-2 button" 
     @click="onClickNavlink('turkey')"
     v-bind:class="{ active: curSectComputed == 'turkey' }">
       Turkey
     </div>
-    <div class="col-2 py-2" 
+    <div class="col-2 py-2 button" 
     @click="onClickNavlink('india')"
     v-bind:class="{ active: curSectComputed == 'india' }">
       India
     </div>
-    <div class="col-2 py-2" 
+    <div class="col-2 py-2 button" 
     @click="onClickNavlink('sea')"
     v-bind:class="{ active: curSectComputed == 'sea' }">
       Southeast Asia
     </div>
-    <div class="col-2 py-2" 
+    <div class="col-2 py-2 button" 
     @click="onClickNavlink('east-asia')"
     v-bind:class="{ active: curSectComputed == 'east-asia' }">
       East Asia
@@ -62,5 +62,8 @@ export default {
     background-color: #66a5ad;
     color: white;
     font-weight: 400;
+  }
+  .button {
+    cursor: pointer;
   }
 </style>

@@ -50,6 +50,12 @@ export default {
         this.$emit("page-selected", pageSelected)
       }
     }
+  },
+  watch: { 
+    curView: function(newVal, oldVal) {
+      if (newVal != oldVal)
+        this.curPageComputed = newVal
+    }
   }
 }
 </script>

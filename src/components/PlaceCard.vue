@@ -1,5 +1,5 @@
 <template>
-  <div class="card" id="card">
+  <div class="card">
     <img class="card-img-top" :src="require(`@/assets/img/${placeUrl}`)" :alt="placeName">
     <div class="card-body">
       <h5 class="card-title">{{placeName}}</h5>
@@ -20,9 +20,6 @@ export default {
 </script>
 
 <style scoped>
-  #card {
-    max-width: 33%;
-  }
   img {
     height: 300px;
   }

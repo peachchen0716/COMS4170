@@ -1,8 +1,8 @@
 <template>
   <div id="app" class="container">
-    <Header :curView="curView" v-on:page-selected="onPageSelected"/>
+    <Header v-bind:curView="curPageComputed" v-on:page-selected="onPageSelected"/>
     
-    <component v-bind:is="curPageComputed"></component>
+    <component v-bind:is="curPageComputed" v-on:page-selected="onPageSelected"></component>
 
   </div>
 </template>
@@ -41,10 +41,14 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: roboto, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
 }
+</style>
+
+<style lang="sass">
+  @import '../node_modules/typeface-roboto/index.css'
 </style>
