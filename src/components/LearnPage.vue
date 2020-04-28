@@ -33,7 +33,7 @@
     <!-- <LearnNavbar :curSect="'turkey'" v-on:area-selected="onAreaSelected"/> -->
     
     <div class="row">
-      <div class="card-group mt-3">
+      <div class="card-deck mt-3">
         <div v-for="place in placeDict[group]" :key="place.id" id="card">
           <PlaceCard
           :placeName="place.placeName"
