@@ -17,10 +17,10 @@
           @click="curFeature = feature.id">{{ feature.name }}</a>
         </div>
       </div>
-      <div class="col-md-6">
-        <img class="px-2 img-fluid rounded" :src="this.place.features[curFeature].url" :alt="this.place.features[curFeature].name">
+      <div class="col-md-6 px-2">
+        <img class="img-fluid rounded" :src="this.place.features[curFeature].url" :alt="this.place.features[curFeature].name">
       </div>
-      <div class="col-md-3 text-left" id="feature-content">{{ this.place.features[curFeature].content }}</div>
+      <div class="col-md-3 text-left feature-content">{{ this.place.features[curFeature].content }}</div>
     </div>
   </div>
 </template>
@@ -248,8 +248,5 @@ export default {
 <style scoped>
   img {
     max-height: 450px;
-  }
-  #feature-content {
-    white-space: pre-wrap;
   }
 </style>

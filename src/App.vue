@@ -11,7 +11,7 @@
             <router-link to="/learn" class="nav-link" active-class="active">Learn</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/quiz" class="nav-link" exact-active-class="active">Quiz</router-link>
+            <router-link to="/quiz" class="nav-link" active-class="active">Quiz</router-link>
           </li>
         </ul>
       </div>
@@ -61,6 +61,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.feature-content {
+  text-align: left;
+  white-space: pre-wrap;
 }
 </style>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="row justify-content-md-center mt-2">
     <div class="bg">
-      <div class="title" @click="$emit('page-selected', 'LearnPage')">
+      <div class="title" @click="goLearn">
         Learn about Asian Architecture
       </div>
       <div class="description">
@@ -14,6 +14,11 @@
 <script>
 export default {
   name: "HomePage",
+  methods: {
+    goLearn() {
+      this.$router.push({ path: 'learn' })
+    }
+  }
 }
 </script>
 

@@ -4,7 +4,7 @@
       <div class="title">
         Ready to take a quiz?
       </div>
-      <div class="take-quiz">
+      <div class="take-quiz" @click="goQuiz">
         Take quiz
       </div>
     </div>
@@ -14,6 +14,11 @@
 <script>
 export default {
   name: "QuizPage",
+  methods: {
+    goQuiz() {
+      this.$router.push({ path: 'quiz/question/0' })
+    }
+  }
 }
 </script>
 
