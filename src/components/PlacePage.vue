@@ -241,6 +241,14 @@ export default {
     goBack() {
       this.$router.push('/learn/' + this.place.group)
     }
+  },
+  mounted: function() {
+    if (!this.$store.state.learnSet.has(this.place.name)) {
+      this.$store.commit('incLearn')
+      this.$store.commit('updateLearnSet', this.place.name)
+    } else {
+      // add css to notify read to user
+    }
   }
 }
 </script>

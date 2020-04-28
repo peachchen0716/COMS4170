@@ -2,6 +2,14 @@
   <div class="container">
 
     <div class="row mt-3">
+      <div class="col-1"></div>
+      <div class="col-10">
+        <ProgressBar type='learn'/>
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+    <div class="row mt-3">
       <div class="col-2"></div>
       <div class="col-2 py-2 button">
         <router-link to="/learn" 
@@ -22,17 +30,9 @@
       <div class="col-1"></div>
     </div>
 
-    <div class="row mt-3">
-      <div class="col-1"></div>
-      <div class="col-10">
-        <ProgressBar :progress="this.progress"/>
-      </div>
-      <div class="col-1"></div>
-    </div>
-
     <!-- <LearnNavbar :curSect="'turkey'" v-on:area-selected="onAreaSelected"/> -->
     
-    <div class="row">
+    <div class="row mt-3">
       <div class="card-deck mt-3">
         <div v-for="place in placeDict[group]" :key="place.id" id="card">
           <PlaceCard
@@ -120,7 +120,7 @@ export default {
           }
         ]
       },
-      progress: 0,
+      progress: 10,
       // selectedPlace: null,
     }
   },

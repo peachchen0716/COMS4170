@@ -1,8 +1,12 @@
 <template>
-  <div class="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" 
-    :aria-valuenow="progress" aria-valuemin="0" aria-valuemax="100" :style="{ width: progress + '%' }" id="progress-bar">
-      Current Progress: {{progress}}%
+  <div>
+    <div class="row justify-content-center">
+      Current Progress: {{this.progressComputed}} %
+    </div>
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" 
+      :style="{ width: this.progressComputed + '%' }" id="progress-bar">
+      </div>
     </div>
   </div>
 </template>
@@ -11,7 +15,15 @@
 export default {
   name: 'ProgressBar',
   props: {
-    progress: Number
+    type: String
+  },
+  computed: {
+    progressComputed() {
+      if (this.type == "learn")
+        return this.$store.state.learnProgress
+      else
+        return this.$store.state.quizProgress
+    }
   }
 }
 </script>

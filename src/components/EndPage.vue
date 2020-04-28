@@ -2,10 +2,10 @@
   <div class="row justify-content-md-center mt-2">
     <div class="bg">
       <div class="title">
-        Ready to take a quiz?
+        Good job! You've finished the quiz.
       </div>
-      <div class="take-quiz" @click="goQuiz">
-        Take quiz
+      <div class="take-quiz" @click="goHome">
+        Home Page
       </div>
     </div>
   </div>
@@ -13,10 +13,10 @@
 
 <script>
 export default {
-  name: "QuizPage",
+  name: "EndPage",
   methods: {
-    goQuiz() {
-      this.$router.push({ path: 'quiz/question/0' })
+    goHome: function() {
+      this.$router.replace({ path: '/' })
     }
   }
 }

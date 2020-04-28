@@ -3,7 +3,7 @@
     <div class="row mt-3">
       <div class="col-1"></div>
       <div class="col-10">
-        <ProgressBar :progress="this.progress"/>
+        <ProgressBar type="quiz"/>
       </div>
       <div class="col-1"></div>
     </div>
@@ -93,7 +93,15 @@ export default {
   methods: {
     goNext() {
       this.ansComputed = false
-      this.$router.replace({ 'path': `/quiz/question/${this.qid + 1}`})
+      var nextid = this.qid + 1
+      if (!this.$store.state.learnSet.has(this.question.id)) {
+        this.$store.commit('incQuiz')
+        this.$store.commit('updateQuizSet', this.question.id)
+      }
+      if (nextid == this.questions.length)
+        this.$router.replace({ 'path': '/quiz/end' })
+      else
+        this.$router.replace({ 'path': `/quiz/question/${nextid}`})
     },
     onAnswer(ans) {
       this.ansComputed = true
@@ -103,7 +111,7 @@ export default {
         this.curContent = this.question.falseResponse
       }
     }
-  }
+  },
 }
 </script>
 

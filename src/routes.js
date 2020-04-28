@@ -1,3 +1,4 @@
+import EndPage from "./components/EndPage.vue";
 import HomePage from "./components/HomePage.vue";
 import LearnPage from "./components/LearnPage.vue";
 import PlacePage from "./components/PlacePage.vue";
@@ -11,6 +12,7 @@ const routes = [
     { path: '/learn/place/:id', component: PlacePage },
     { path: '/quiz', component: QuizPage },
     { path: '/quiz/question/:id', component: Question },
+    { path: '/quiz/end', component: EndPage},
 ];
 
 export default routes;

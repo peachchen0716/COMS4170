@@ -4,6 +4,7 @@
     <div class="card-body">
       <h5 class="card-title">{{placeName}}</h5>
       <p class="card-text">{{placeLoc}}</p>
+      <div class="btn btn-outline-success" v-if="didBefore">Finished</div>
     </div>
   </div>
 </template>
@@ -15,6 +16,11 @@ export default {
     placeName: String,
     placeLoc: String,
     placeUrl: String,
+  },
+  computed: {
+    didBefore() {
+      return this.$store.state.learnSet.has(this.placeName)
+    }
   }
 }
 </script>
