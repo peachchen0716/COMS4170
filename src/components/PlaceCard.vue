@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img class="card-img-top img-fluid" :src="require(`@/assets/img/${placeUrl}`)" :alt="placeName">
+    <img class="card-img-top img-fluid" :src="placeUrl" :alt="placeName">
     <div class="card-body">
       <h5 class="card-title">{{placeName}}</h5>
       <p class="card-text">{{placeLoc}}</p>

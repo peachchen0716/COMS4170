@@ -68,13 +68,13 @@ export default {
             id: 1,
             placeName: "Hagia Sophia",
             placeLoc: "Istanbul, Turkey",
-            placeUrl: "1079px-Hagia_Sophia_Mars_2013.jpg",
+            placeUrl: "https://upload.wikimedia.org/wikipedia/commons/2/22/Hagia_Sophia_Mars_2013.jpg",
           },
           {
             id: 2,
             placeName: "Blue Mosque",
             placeLoc: "Istanbul, Turkey",
-            placeUrl: "1440px-P1020390.jpg",
+            placeUrl: "https://upload.wikimedia.org/wikipedia/commons/4/46/P1020390.JPG",
           }
         ],
         "india": [
@@ -82,13 +82,13 @@ export default {
             id: 3,
             placeName: "Taj Mahal",
             placeLoc: "Uttar Pradesh, India",
-            placeUrl: "1200px-Taj_Mahal_(Edited).jpeg",
+            placeUrl: "https://upload.wikimedia.org/wikipedia/commons/1/1d/Taj_Mahal_%28Edited%29.jpeg",
           },
           {
             id: 4,
             placeName: "Lakshmana Temple",
             placeLoc: "Madhya Pradesh, India",
-            placeUrl: "Khajuraho-Lakshmana_temple.jpg",
+            placeUrl: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Khajuraho-Lakshmana_temple.JPG",
           }
         ],
         "sea": [
@@ -96,13 +96,13 @@ export default {
             id: 5,
             placeName: "Ananda Temple",
             placeLoc: "Bagan, Myanmar",
-            placeUrl: "Ananda-Temple-2.jpg",
+            placeUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Ananda-Temple-2.JPG/640px-Ananda-Temple-2.JPG",
           },
           {
             id: 6,
             placeName: "Angkor Wat",
             placeLoc: "Siem Reap, Cambodia",
-            placeUrl: "1200px-Angkor_(II).jpg",
+            placeUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Angkor_%28II%29.jpg/640px-Angkor_%28II%29.jpg",
           }
         ],
         "east-asia": [
@@ -110,13 +110,13 @@ export default {
             id: 7,
             placeName: "Forbidden City",
             placeLoc: "Beijing, China",
-            placeUrl: "Forbidden_City_Beijing_(3019178959).jpg",
+            placeUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Forbidden_City_Beijing_%283019178959%29.jpg",
           },
           {
             id: 8,
             placeName: "Kinkaku-ji",
             placeLoc: "Kyoto, Japan",
-            placeUrl: "1440px-Kinkaku-ji_the_Golden_Temple_in_Kyoto_overlooking_the_lake_-_high_rez.jpg",
+            placeUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Kinkaku-ji_the_Golden_Temple_in_Kyoto_overlooking_the_lake_-_high_rez.JPG/640px-Kinkaku-ji_the_Golden_Temple_in_Kyoto_overlooking_the_lake_-_high_rez.JPG",
           }
         ]
       },
