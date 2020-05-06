@@ -2,7 +2,7 @@
   <div class="row justify-content-md-center mt-2">
     <div class="bg">
       <div class="title" @click="goLearn">
-        Learn about Asian Architecture
+        Asian Architecture 101
       </div>
       <div class="description">
         At the end of this tutorial, you will get a basic understanding of turkish, indian, southeastern asian, eastern asian architecture designs, and hopefully be able to distinguish designs among different cultural groups

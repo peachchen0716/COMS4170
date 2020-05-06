@@ -4,7 +4,7 @@
       Current Progress: {{this.progressComputed}} %
     </div>
     <div class="progress">
-      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" 
+      <div class="progress-bar" role="progressbar" 
       :style="{ width: this.progressComputed + '%' }" id="progress-bar">
       </div>
     </div>

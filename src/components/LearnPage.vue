@@ -29,9 +29,7 @@
       </div>
       <div class="col-1"></div>
     </div>
-
-    <!-- <LearnNavbar :curSect="'turkey'" v-on:area-selected="onAreaSelected"/> -->
-    
+        
     <div class="row mt-3">
       <div class="card-deck mt-3">
         <div v-for="place in placeDict[group]" :key="place.id" id="card">
@@ -48,20 +46,17 @@
 </template>
 
 <script>
-// import LearnNavbar from "./LearnNavbar.vue";
 import PlaceCard from "./PlaceCard.vue";
 import ProgressBar from "./ProgressBar.vue";
 
 export default {
   name: "LearnPage",
   components: {
-    // LearnNavbar,
     PlaceCard,
     ProgressBar,
   },
   data: function () {
     return {
-      // curArea: "turkey",
       placeDict: {
         "turkey": [
           {
@@ -121,12 +116,10 @@ export default {
         ]
       },
       progress: 10,
-      // selectedPlace: null,
     }
   },
   computed: {
     group() {
-      // console.log(this.$route.params)
       if (!("group" in this.$route.params))
         return "turkey"
       return this.$route.params.group
@@ -139,21 +132,9 @@ export default {
         this.progress = newValue
       }
     },
-    // selectedPlaceComputed: {
-    //   get: function() {
-    //     return this.selectedPlace
-    //   },
-    //   set: function(newValue) {
-    //     this.selectedPlace = newValue
-    //   }
-    // }
   },
   methods: {
-    // onAreaSelected: function (areaSelected) {
-    //   this.curArea = areaSelected
-    // },
     onClickCard: function (id) {
-      // this.selectedPlaceComputed = id
       this.$router.push({ path: `/learn/place/${id}` })
     }
   }

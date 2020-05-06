@@ -31,13 +31,12 @@ export default {
   }
   .title {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-top: 170px;
 
   }
   .take-quiz {
     color: white;
-    /* width: 30%; */
     font-size: 1.2rem;
     font-weight: 400;
     border: 2px solid white;
